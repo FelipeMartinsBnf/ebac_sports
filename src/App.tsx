@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { store } from './store'
 import { Provider } from 'react-redux'
 
@@ -15,14 +14,6 @@ export type Produto = {
 }
 
 function App() {
-  const [produtos, setProdutos] = useState<Produto[]>([])
-
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/ebac_sports')
-      .then((res) => res.json())
-      .then((res) => setProdutos(res))
-  }, [])
-
   return (
     <Provider store={store}>
       <GlobalStyle />
